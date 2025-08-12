@@ -1,0 +1,44 @@
+# 환경변수 파일 (민감한 정보 포함)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# 데이터베이스 파일
+*.db
+*.sqlite
+*.sqlite3
+db/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 빌드 결과물
+dist/
+build/
+coverage/
+
+# 패키지 잠금 파일 (선택사항)
+# package-lock.json
+# yarn.lock 
