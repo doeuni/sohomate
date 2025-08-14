@@ -1,9 +1,22 @@
-
 import dotenv from "dotenv";
 dotenv.config();
 
+import fs from "fs";
+import path from "path";
+
 import Database from "better-sqlite3";
-const db = new Database("db/soho.db");
+// 데이터베이스 파일 경로 정의
+const dbDir = path.join(process.cwd(), "db");
+const dbFile = path.join(dbDir, "soho.db");
+
+// 디렉터리가 없으면 생성
+if (!fs.existsSync(dbDir)) {
+  console.log(`Directory ${dbDir} does not exist. Creating...`);
+  fs.mkdirSync(dbDir, { recursive: true });
+}
+
+const db = new Database(dbFile);
+console.log(`SQLite database opened at ${dbFile}`);
 
 // 1. 메인 테이블
 db.exec(`
